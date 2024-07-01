@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('drink');
+            $table->string('other')->nullable();
             // $table->string('image')->nullable();
             $table->timestamps();
-            $table->string('body')->nullable();
         });
     }
 

@@ -9,3 +9,6 @@ Route::get('/', function () {
 
 Route::get('menus',[MenuController::class,'index']);
 
+Route::get('menus/add', [MenuController::class, 'add'])->name('menus.add');
+Route::get('menus/create', [MenuController::class, 'create'])->name('menus.create');
+Route::get('menus/{id}/edit', [MenuController::class, 'edit'])->name('menus.edit');

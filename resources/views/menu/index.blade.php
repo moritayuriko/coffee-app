@@ -6,10 +6,26 @@
 </head>
 <body>
     <h1>メニュー</h1>
-    <ul>
-        @foreach($menus as $menu)
-        <li>{{ $menue->body }}</li>
-        @endforeach
-    </ul>
+    <table border="1">
+    <tr> 
+        <th>商品番号</th>
+        <th>詳細</th>
+        <th>編集</th>
+        <th>削除</th>
+    </tr>
+    @foreach($menus as $menu)
+    <tr>
+        <td>{{ $menu->id }}</td>
+        <td>{{ $menu->drink }}</td>
+        <td>{{"まだ"}}</td>
+        <td>{{"です"}}</td>
+    </tr>
+    @endforeach
+    </table>
+    <a href="{{ route('menus.add') }}">メニューを追加</a>
+
+
+       
+
 </body>
 </html>

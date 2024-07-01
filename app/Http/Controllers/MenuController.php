@@ -16,4 +16,21 @@ class MenuController extends Controller
         //??menusというキーでビューへ渡す
         return view('menu/index',['menus'=>$menus]);
     }
+
+
+    public function add()
+    {
+        
+        return view('menu/add');
+    }
+    public function create()
+{
+    return view('menus/create');
+}
+
+    public function edit($id)
+{
+    $menu = Menu::findOrFail($id);
+    return view('menus/edit', ['menu' => $menu]);
+}
 }
