@@ -6,9 +6,8 @@
 </head>
 <body>
     <main>
-        <h1>追加</h1>
-        <!-- <form action="{{ route('menu.add') }}"method="POST"> -->
-        <form action="/drink.added"method="POST">
+        <h1>更新</h1>
+        <form action="{{ route('menu.upd') }}"method="PUT">
             @csrf
 
             <div>
@@ -19,7 +18,7 @@
             <label>その他</label>
             <input type="text" name="other">
             </div>
-            <input type="submit" value="追加を送信">
+            <input type="submit" value="更新を送信">
             
         </form>
       <div>

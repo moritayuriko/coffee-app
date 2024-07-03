@@ -16,6 +16,12 @@ class MenusTableSeeder extends Seeder
         $menus=[
             ['drink'=>'GreenTea'],
             ['drink'=>'Water'],
+            ['drink'=>'INU'],
+            ['drink'=>'Ukiwa'],
+            ['drink'=>'Warabe'],
+            ['drink'=>'Enogu'],
+            ['drink'=>'Git'],
+
         ];
 
         foreach($menus as $menu){

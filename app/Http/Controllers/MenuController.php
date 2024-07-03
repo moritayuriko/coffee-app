@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Menu;
+use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Illuminate\Support\Facades\DB;
 
 class MenuController extends Controller
 {
@@ -14,23 +17,36 @@ class MenuController extends Controller
         $menus = Menu::all();
 
         //??menusというキーでビューへ渡す
-        return view('menu/index',['menus'=>$menus]);
+        return view('menu.index',['menus'=>$menus]);
     }
-
 
     public function add()
     {
-        
-        return view('menu/add');
+        return view('menu.add');
     }
-    public function create()
-{
-    return view('menus/create');
+    public function create(Request $request)
+    {
+        $menu = new Menu();
+        $menu->id=$request->id;
+        $menu->drink=$request->drink;
+        $menu->other=$request->other;
+
+        $menu->save();
+        return redirect()->route('menus.index');
+
+    }
+
+    public function destroy(Menu $menu):RedirectResponse
+    {
+        DB::transaction(function() use($menu){
+            //削除
+            $menu->delete();
+        });
+        return redirect()->route('menus.index');
 }
 
-    public function edit($id)
+public function new()
 {
-    $menu = Menu::findOrFail($id);
-    return view('menus/edit', ['menu' => $menu]);
+    return redirect()->route('menu.update');
 }
 }
