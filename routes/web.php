@@ -16,8 +16,9 @@ Route::post('drink.added', [MenuController::class, 'create'])->name('menu.added'
 Route::delete('menus/{menu}', [MenuController::class, 'destroy'])
 ->where('menu', '[0-9]+')
 ->name('menus.destroy');
-
-Route::get('new', [MenuController::class, 'new'])->name('menus.new');
-
+//更新ページの表示
+Route::get('new', [MenuController::class, 'new'])->name('menus.edit');
+//更新処理
+Route::put('up', [MenuController::class, 'update'])->name('menu.up');
 
 
