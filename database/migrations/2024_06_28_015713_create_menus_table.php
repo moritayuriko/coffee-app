@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('drink');
             $table->string('other')->nullable();
+            $table->string('imagePath')->nullable();
           
             $table->timestamps();
         });
