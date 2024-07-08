@@ -29,7 +29,7 @@
                 </form>
             </td>
             <td>
-                <a href="{{ route('menus.edit') }}">
+            <a href="{{ route('menus.edit', ['menu' => $menu->id]) }}">
                     <button type="button">更新</button>
                 </a>
             </td>

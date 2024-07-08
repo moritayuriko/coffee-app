@@ -20,7 +20,17 @@ class MenusTableSeeder extends Seeder
             ['drink'=>'Ukiwa'],
             ['drink'=>'Warabe'],
             ['drink'=>'Enogu'],
-            ['drink'=>'Git'],
+            ['drink'=>'熱帯魚'],
+            ['drink'=>'アイスコーヒー'],
+            ['drink'=>'水道水'],
+            ['drink'=>'ミネラルウォーター'],
+            ['drink'=>'水'],
+            ['drink'=>'天然水'],
+            ['drink'=>'小夜'],
+            ['drink'=>'よまいとけ'],
+            ['drink'=>'けびいし'],
+            ['drink'=>'詩'],
+            ['drink'=>'シアノトキシン'],
 
         ];
 

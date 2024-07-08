@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ReserveController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,9 +17,12 @@ Route::post('drink.added', [MenuController::class, 'create'])->name('menu.added'
 Route::delete('menus/{menu}', [MenuController::class, 'destroy'])
 ->where('menu', '[0-9]+')
 ->name('menus.destroy');
-//更新ページの表示
-Route::get('new', [MenuController::class, 'new'])->name('menus.edit');
-//更新処理
-Route::put('up', [MenuController::class, 'update'])->name('menu.up');
 
+//更新
 
+Route::get('/menus/{menu}/edit', [MenuController::class, 'edit'])->name('menus.edit');
+Route::put('/menus/{menu}', [MenuController::class, 'update'])->name('menus.update');
+
+//お客側のメニュー一覧・選択画面
+
+Route::get('page/reserve',[ReserveController::class,'shop'])->name('reserve');

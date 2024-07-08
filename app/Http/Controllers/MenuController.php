@@ -44,32 +44,23 @@ class MenuController extends Controller
         });
         return redirect()->route('menus.index');
 }
-//更新フォームの表示
-public function new(Menu $menu)
+
+
+// 更新フォームの表示
+public function edit(Menu $menu)
 {
-    // return redirect()->route('menus.index');
-    return view('menu.update',['menu' => $menu]);
+    return view('menu.update', ['menu' => $menu]);
 }
-//更新機能
+
+// 更新機能
 public function update(Request $request, Menu $menu)
 {
-    
-    // $menus = Menu::all();
-   
-    // $menu->drink = $request->input('drink');
-    // $menu->other = $request->input('other');
-    // $menu->save();
-    
-    $menu->drink = $request->drink;
-    $menu->other = $request->other;
+    // バリデーションを今度追加したい！
+
+    $menu->drink = $request->input('drink');
+    $menu->other = $request->input('other');
     $menu->save();
 
-    DB::transaction(function() use($menu,$request){
-        $menu->update();
-    });
-
     return redirect()->route('menus.index');
-    }
-
 }
-
+}
