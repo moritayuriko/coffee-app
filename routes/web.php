@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\CartController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,6 +29,8 @@ Route::put('/menus/{menu}', [MenuController::class, 'update'])->name('menus.upda
 Route::get('page/reserve',[ReserveController::class,'shop'])->name('reserve');
 
 
-//カート
+//カート機能になる予定。CartControllerの部分
 
-// Route::get('page/myCart', [StockController::class, 'myCart'])->name('myCart');
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+Route::delete('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
