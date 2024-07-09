@@ -21,6 +21,7 @@ class MenuController extends Controller
         return view('menu.index', ['menus' => $menus]);
     }
 
+    //追加機能の実装はこの部分
     public function add()
     {
         return view('menu.add');
