@@ -30,4 +30,4 @@ Route::get('page/reserve',[ReserveController::class,'shop'])->name('reserve');
 
 //カート
 
-Route::get('page/myCart', [StockController::class, 'myCart'])->name('myCart');
+// Route::get('page/myCart', [StockController::class, 'myCart'])->name('myCart');
