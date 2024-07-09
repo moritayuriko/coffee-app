@@ -13,6 +13,7 @@
             <th>商品番号</th>
             <th>詳細</th>
             <th>その他</th>
+            <th>イメージ</th>
             <th>削除</th>
             <th>更新</th>
         </tr>
@@ -21,6 +22,8 @@
             <td>{{ $menu->id }}</td>
             <td>{{ $menu->drink }}</td>
             <td>{{ $menu->other }}</td>
+            <td>{{ $menu->imagePath }}</td>
+            
             <td>
                 <form action="{{ route('menus.destroy',$menu) }}" method="POST">
                     @csrf

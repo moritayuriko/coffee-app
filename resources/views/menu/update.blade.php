@@ -19,6 +19,10 @@
                 <label>その他</label>
                 <input type="text" name="other" value="{{ old('other', $menu->other) }}">
             </div>
+            <div>
+                <label>イメージ</label>
+                <input type="text" name="imagePath" value="{{ old('imagePath', $menu->imagePath) }}">
+            </div>
 
             <div>
                 <input type="submit" value="更新を送信">

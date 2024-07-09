@@ -10,8 +10,9 @@
                 
                 @foreach($menus as $menu)
                 <h2 style="text-align:center;font-size:1em;">
-                <img src="/image/{{$menu->imagePath}}" alt="" class="incart" ></img>
                             {{$menu->drink}}
+                            <br>
+                            <img src="{{ asset($menu->imagePath) }}">
                             <br>
 
                         {{$menu->other}} </h2>
