@@ -75,4 +75,7 @@ class MenuController extends Controller
         return redirect()->route('menus.index');
     }
 
+    //カート機能を作りたい！
+    
+
 }

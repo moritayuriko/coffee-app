@@ -26,3 +26,8 @@ Route::put('/menus/{menu}', [MenuController::class, 'update'])->name('menus.upda
 //お客側のメニュー一覧・選択画面
 
 Route::get('page/reserve',[ReserveController::class,'shop'])->name('reserve');
+
+
+//カート
+
+Route::get('page/myCart', [StockController::class, 'myCart'])->name('myCart');
